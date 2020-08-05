@@ -3,13 +3,11 @@ package com.swisscom.undo.manager.impl;
 import com.swisscom.undo.manager.api.Document;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
-@Getter
 @NoArgsConstructor
-@Slf4j
 public class SimpleTextDocument implements Document {
 
+    @Getter
     private StringBuilder content = new StringBuilder();
     private int currentPos;
 
@@ -45,7 +43,11 @@ public class SimpleTextDocument implements Document {
     }
 
     @Override
-    public void setDot(int pos) {
+    public int getDot() {
+        return currentPos;
+    }
+
+    private void setDot(int pos) {
         if (currentPos + pos > content.length() || currentPos < 0) {
             throw new IllegalStateException("Illegal dot position while updating current position");
         }

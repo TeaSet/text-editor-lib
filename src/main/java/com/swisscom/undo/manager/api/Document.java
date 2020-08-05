@@ -14,7 +14,7 @@ public interface Document {
 	 * @throws IllegalStateException If the document doesn't have <code>s</code>
 	 * 			as <code>pos</code>.  
 	 */
-	public void delete(int pos, String s);
+	void delete(int pos, String s);
 	
 	/**
 	 * Inserts a string into the document.
@@ -24,14 +24,10 @@ public interface Document {
 	 * @throws IllegalStateException If <code>pos</code> is an illegal position 
 	 * 			(that is, if document is shorter than that). 
 	 */
-	public void insert(int pos, String s);
-	
+	void insert(int pos, String s);
+
 	/**
-	 * Sets the dot (cursor) position of the document. 
-	 * 
-	 * @param pos The dot position to set.
-	 * @throws IllegalStateException If <code>pos</code> is an illegal position 
-	 * 			(that is, if document is shorter than that). 
+	 * Gets the dot (cursor) position of the document.
 	 */
-	public void setDot(int pos);
+	int getDot();
 }
