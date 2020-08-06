@@ -24,8 +24,6 @@ ext {
 	set('logback', '0.1.5')
 	set('slf4j', '1.7.25')
 	set('junit5', '5.5.2')
-	set('commonsLang3', '3.9')
-	set('commonsIo', '2.6')
 }
 
 repositories {
@@ -49,8 +47,6 @@ dependencies {
 	 */
 
 	compile("org.slf4j:slf4j-api:${slf4j}")
-	compile("org.apache.commons:commons-lang3:${commonsLang3}")
-	compile("commons-io:commons-io:${commonsIo}")
 }
 
 task cleanResources(type: Delete) {
